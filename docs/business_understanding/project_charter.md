@@ -66,23 +66,12 @@ Se adopta el **Team Data Science Process (TDSP)** como marco de gestión del pro
 
 **Control de calidad:** corpus versionado con checksums; separación estricta entre entrenamiento, validación y prueba; la muestra etiquetada del dominio se usa para evaluar la generalización y no para ajustar el modelo base; todas las transformaciones se ajustan solo con datos de entrenamiento.
 
-## Cronograma
-
-Las fechas son de referencia y se ajustan al calendario oficial del curso.
-
-| Etapa | Duración | Fechas | Entregable principal |
-|---|---|---|---|
-| Entendimiento del negocio y carga de datos | 2 semanas | 25 nov – 8 dic 2026 | `project_charter.md`, definición y diccionario de datos |
-| Preprocesamiento y análisis exploratorio | 4 semanas | 9 dic 2026 – 5 ene 2027 | `data_summary.md`, notebooks de EDA y limpieza |
-| Modelamiento y extracción de características | 4 semanas | 6 ene – 2 feb 2027 | `baseline_models.md`, `model_report.md` |
-| Despliegue | 2 semanas | 3 – 16 feb 2027 | `deploymentdoc.md`, prototipo de inferencia |
-| Evaluación y entrega final | 3 semanas | 17 feb – 9 mar 2027 | `exit_report.md`, informe y sustentación |
 
 ## Equipo del Proyecto
 
 - **William Mora** — integrante del equipo; análisis de datos, modelado y documentación.
 - **Jorge Esau Tierradentro** — integrante del equipo; adquisición de datos, modelado y documentación.
-- **Felipe Restrepo Calle** — profesor del curso; orientación metodológica y evaluación.
+
 
 ## Presupuesto
 
@@ -107,7 +96,6 @@ Las fechas son de referencia y se ajustan al calendario oficial del curso.
 | Equipo del proyecto | Ejecución | Resultados técnicamente sólidos, reproducibles y entregados en los plazos |
 | Universidad Nacional de Colombia (curso) | Evaluación académica | Rigor metodológico, trazabilidad y documentación de cada fase |
 
-**Aprobador:** profesor del curso. **Fecha de aprobación:** pendiente de la revisión de la semana 1.
 
 ## Riesgos y supuestos
 
@@ -123,10 +111,3 @@ Las fechas son de referencia y se ajustan al calendario oficial del curso.
 
 **Supuestos:** los comentarios son públicos y accesibles al momento de la recolección; no contienen datos personales sensibles; el corpus descrito en el notebook es la versión oficial del proyecto.
 
-## Aprobaciones
-
-| Nombre | Cargo | Firma | Fecha |
-|---|---|---|---|
-| Felipe Restrepo Calle | Profesor del curso | | |
-| William Mora | Integrante del equipo | | |
-| Jorge Esau Tierradentro | Integrante del equipo | | |
