@@ -69,9 +69,4 @@ La limpieza documentada en el análisis exploratorio sigue estos pasos:
 
 Como resultado, el corpus analítico queda en 2.530 comentarios, de los cuales 580 conservan etiqueta humana tras la depuración y 1.951 se clasifican con el modelo ajustado.
 
-## Consideraciones de privacidad
 
-- Solo se emplean comentarios públicos; no se accede a información privada ni a perfiles.
-- No se almacenan datos personales: los autores se conservan como identificadores públicos (`@usuario`) y no se realizan análisis de individuos.
-- La clave de la YouTube Data API no se versiona ni se incluye en el repositorio.
-- El tratamiento se enmarca en la Ley 1581 de 2012 y en los términos de servicio de YouTube.
