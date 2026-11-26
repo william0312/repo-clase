@@ -11,7 +11,7 @@ La evaluación del festival se apoya en indicadores cuantitativos (asistencia, a
 
 ## Enfoque
 
-- **Datos:** comentarios públicos de YouTube (2023, 2024, 2025) recuperados con criterios homogéneos; muestra etiquetada manualmente de 580 comentarios; corpus TASS 2020 para entrenamiento.
+- **Datos:** comentarios públicos de YouTube (2023, 2024, 2025) recuperados con criterios homogéneos; muestra etiquetada manualmente de 586 comentarios; corpus TASS 2020 para entrenamiento.
 - **Modelos:** TF-IDF + SVM lineal (línea base), RoBERTa-base-BNE y RoBERTuito con *fine-tuning*.
 - **Análisis:** chi-cuadrado de independencia, V de Cramér y comparaciones por pares con corrección de Holm.
 - **Metodología:** TDSP, con un flujo de trabajo alineado con CRISP-DM.
@@ -25,6 +25,7 @@ docs/
   modeling/                 Modelos base y reporte del modelo final
   deployment/               Documentación del despliegue
   acceptance/               Informe de salida
+data/                       Datos locales (no versionados; se reconstruyen)
 scripts/                    Scripts ejecutables por etapa
 src/                        Código fuente del proyecto (paquete Python)
 ```
@@ -33,8 +34,8 @@ src/                        Código fuente del proyecto (paquete Python)
 
 | Fase TDSP | Estado |
 |---|---|
-| Entendimiento del negocio | En curso — semana 1 |
-| Entendimiento y preparación de datos | Pendiente |
+| Entendimiento del negocio | Completo — semana 1 |
+| Entendimiento y preparación de datos | En curso — semana 1 |
 | Modelado | Pendiente |
 | Despliegue | Pendiente |
 | Aceptación | Pendiente |
@@ -45,6 +46,28 @@ src/                        Código fuente del proyecto (paquete Python)
 - Jorge Esau Tierradentro
 
 Curso: Proyecto Aplicado — Universidad Nacional de Colombia.
+
+## Datos
+
+El proyecto usa cuatro insumos de datos, todos versionados de forma congelada en Google Drive:
+
+| Insumo | Archivo | Uso |
+|---|---|---|
+| Corpus completo de Rock al Parque | `dataframe_df.xlsx` | Universo de comentarios (2.706) |
+| Muestra etiquetada manualmente | `Con_etiqueta.xlsx` | Evaluación en el dominio (586) |
+| Comentarios sin etiqueta | `Sin_etiqueta.xlsx` | Clasificación con el modelo final (1.962) |
+| TASS 2020 | `Task1-train-dev.zip` | Entrenamiento y comparación de modelos |
+
+Se descargan y verifican con:
+
+```bash
+pip install gdown openpyxl pandas
+python scripts/data_acquisition/main.py --data-dir data/raw --resumen
+# solo TASS:
+python scripts/data_acquisition/main.py --data-dir data/raw --solo tass_2020
+```
+
+Los archivos no se versionan en Git (`data/` está en `.gitignore`): se reconstruyen con ese script y cada descarga se valida contra un SHA-256 registrado. Así el repositorio no duplica datos de terceros ni comentarios de usuarios, y cualquier persona obtiene exactamente las mismas versiones.
 
 ## Reproducibilidad
 

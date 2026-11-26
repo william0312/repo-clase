@@ -30,8 +30,8 @@ Comparar la recepción digital de las ediciones 2023, 2024 y 2025 de Rock al Par
 ### Incluye
 
 - **Fuente de datos:** YouTube Data API. Para cada año se consultan hasta 50 videos ordenados por número de visualizaciones y se conservan los que referencian explícitamente Rock al Parque y el año; se recuperan hasta 100 comentarios públicos por video. Ediciones 2023, 2024 y 2025.
-- **Corpus:** aproximadamente 2.700 comentarios recolectados; tras depuración, un corpus analítico final de 2.530 comentarios (789 de 2023, 1.098 de 2024 y 643 de 2025).
-- **Muestra etiquetada:** 580 comentarios anotados manualmente (≈195 por edición) con las categorías P, NEU y N.
+- **Corpus:** 2.706 comentarios recolectados (814 de 2023, 1.212 de 2024 y 680 de 2025); tras la depuración descrita en el análisis exploratorio, el corpus analítico queda en 2.530 comentarios.
+- **Muestra etiquetada:** 586 comentarios anotados manualmente (169 de 2023, 196 de 2024 y 221 de 2025) con las categorías P, NEU y N.
 - **Corpus de entrenamiento:** TASS 2020 (conjuntos train y dev), con etiquetas de polaridad P, NEU y N.
 - **Modelado:** TF-IDF + SVM lineal como línea base; RoBERTa-base-BNE y RoBERTuito con fine-tuning; búsqueda de hiperparámetros y evaluación sobre conjunto de prueba independiente.
 - **Análisis:** distribución del sentimiento por edición, prueba chi-cuadrado de independencia, V de Cramér y comparaciones por pares con corrección de Holm.
@@ -116,7 +116,7 @@ Las fechas son de referencia y se ajustan al calendario oficial del curso.
 | Sesgo de selección de YouTube: el corpus no representa a toda la audiencia | Conclusiones no generalizables | Declarar el alcance explícitamente y no extrapolar a asistentes ni a la ciudadanía |
 | Comentarios muy breves, emojis y jerga | Pérdida de señal y errores de clasificación | Preprocesamiento diferenciado por modelo; conservar emojis en RoBERTuito |
 | Clase neutra ambigua y minoritaria | Bajo F1 en NEU | Reportar F1 macro y por clase; analizar la matriz de confusión |
-| Etiquetado manual subjetivo (580 comentarios) | Ruido en las etiquetas | Criterios de anotación documentados y revisión de casos dudosos |
+| Etiquetado manual subjetivo (586 comentarios) | Ruido en las etiquetas | Criterios de anotación documentados y revisión de casos dudosos |
 | Cambios en la API o agotamiento de cuota | Interrupción de la recolección | Corpus congelado con checksums; recolección única documentada |
 | Deriva de dominio entre ediciones | Comparaciones inválidas | Criterios homogéneos de búsqueda y extracción; verificación de la distribución |
 | Fuga de información entre train y test | Métricas infladas | Partición estricta y ajuste de transformaciones solo con entrenamiento |

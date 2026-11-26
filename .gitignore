@@ -3,3 +3,6 @@
 env_vars*
 credentials*
 **/build/*
+
+# Datos (se reconstruyen con scripts/data_acquisition/main.py)
+data/raw/

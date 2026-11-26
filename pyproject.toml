@@ -20,6 +20,10 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+data = [
+    "gdown",
+    "openpyxl",
+]
 nlp = [
     "torch",
     "transformers",
