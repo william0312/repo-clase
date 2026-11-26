@@ -3,13 +3,29 @@ requires = ["setuptools", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "nombre_paquete"
+name = "rock-al-parque-sentimiento"
 version = "0.1.0"
-authors = [{name = "autor1", email = "correo@correo.com"}]
-description = "Descripción del proyecto"
-requires-python = ">3.8"
+authors = [
+    {name = "William Mora"},
+    {name = "Jorge Esau Tierradentro"},
+]
+description = "Análisis comparativo de la recepción digital de Rock al Parque (2023-2025) mediante análisis de sentimiento"
+requires-python = ">=3.9"
 dependencies = [
-    "numpy"
+    "pandas",
+    "numpy",
+    "scikit-learn",
+    "matplotlib",
+    "seaborn",
+]
+
+[project.optional-dependencies]
+nlp = [
+    "torch",
+    "transformers",
+    "datasets",
+    "emoji",
+    "langdetect",
 ]
 
 [tool.setuptools.packages.find]
